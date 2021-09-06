@@ -154,7 +154,7 @@ public class Storage {
             fw.write(sb.toString());
             fw.close();
         } catch (IOException e) {
-            System.out.println("Error occured while updating file storage");
+            System.out.println("Error occurred while updating file storage");
         }
     }
 

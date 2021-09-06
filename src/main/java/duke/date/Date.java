@@ -35,6 +35,7 @@ public class Date {
         String[] dateTimeSplit = dateAndTime.split(" ");
         LocalDate inputDate;
         LocalTime inputTime;
+        assert (dateTimeSplit.length == 2) : "Only date and time elements should exist here!";
         inputDate = formatDate(dateTimeSplit[0]);
         inputTime = formatTime(dateTimeSplit[1]);
         this.globalDate = inputDate;
@@ -53,6 +54,7 @@ public class Date {
         } else if (hhmm.length > 2) {
             throw new WrongTimeFormatException();
         } else {
+            assert (hhmm.length == 2) : "Time format should be split into hours and minutes only!";
             int hours = Integer.valueOf(hhmm[0]);
             int mins = Integer.valueOf(hhmm[1]);
             time = LocalTime.of(hours, mins);
