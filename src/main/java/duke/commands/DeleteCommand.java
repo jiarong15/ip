@@ -26,6 +26,7 @@ public class DeleteCommand extends Command {
         if (instructions.length != 2) {
             throw new WrongDeleteFormatException();
         }
+        assert (instructions.length == 2) : "Delete either have missing description orv too many arguments!";
         int taskNumber = Integer.valueOf(instructions[1]);
         Task taskRemoved = tasks.deleteTask(taskNumber);
         storage.updateStorageList(tasks.getTaskList());

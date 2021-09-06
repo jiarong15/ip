@@ -59,6 +59,7 @@ public class Parser {
                     + " cannot be empty.";
             throw new NoSuchCommandException(errorMessage);
         }
+        assert (commandList.length > 1) : "Command given should have more than just the header";
         String actualInputs = String.join(" ", commandList);
         return new TaskCommand(actualInputs);
     }
